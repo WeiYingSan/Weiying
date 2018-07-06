@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         bottom_tabbar = findViewById(R.id.bottom_tabbar);
         bottom_tabbar.init(getSupportFragmentManager())
                 .setImgSize(50, 50)//设置ICON图片的尺寸
-                .setFontSize(8)//设置文字的尺寸
+                .setFontSize(15)//设置文字的尺寸
                 .setTabPadding(10,6,10)
                 .addTabItem("精选", R.drawable.found_select, R.drawable.found, oneFragment.class)
                 .addTabItem("专题", R.drawable.special_select, R.drawable.special, twoFragment.class)
