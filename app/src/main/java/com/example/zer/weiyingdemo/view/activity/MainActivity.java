@@ -12,15 +12,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        GregorianCalendar gregorianCalendar = new GregorianCalendar();
-        Log.e("aaa", "onCreate: "+"zer");
-        Log.e("aaa", "onCreate: "+"zer1");
-        Log.e("aaa", "onCreate: "+"zer2");
-        Log.e("aaa", "onCreate: "+"zer3");
-        Log.e("aaa", "onCreate: "+"lhf1" );
-        Log.e("aaa", "onCreate: "+"lhf2" );
-        Log.e("aaa", "onCreate: "+"lhf3" );
-        Log.e("aaa", "onCreate: "+"wtq1" );
     }
     
 }
