@@ -17,6 +17,10 @@ public class MainActivity extends AppCompatActivity {
         Log.e("aaa", "onCreate: "+"zer1");
         Log.e("aaa", "onCreate: "+"zer2");
         Log.e("aaa", "onCreate: "+"zer3");
+        Log.e("aaa", "onCreate: "+"lhf1" );
+        Log.e("aaa", "onCreate: "+"lhf2" );
+        Log.e("aaa", "onCreate: "+"lhf3" );
+        Log.e("aaa", "onCreate: "+"wtq1" );
     }
     
 }
