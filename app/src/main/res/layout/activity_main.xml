@@ -1,20 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.example.zer.weiyingdemo.ResideLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context=".view.activity.MainActivity"
-    android:background="@drawable/bg_colorful">
-    
-    <include layout="@layout/title_layout"/>
-    
-    <com.hjm.bottomtabbar.BottomTabBar
-    android:id="@+id/bottom_tabbar"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    </com.hjm.bottomtabbar.BottomTabBar>
-    
+    android:background="@drawable/bg_blue">
 
-</LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#f00"
+        ></LinearLayout>
+
+    <RelativeLayout
+        android:background="#fff"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <com.hjm.bottomtabbar.BottomTabBar
+            android:id="@+id/bottom_tabbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </com.hjm.bottomtabbar.BottomTabBar>
+    </RelativeLayout>
+</com.example.zer.weiyingdemo.ResideLayout>
