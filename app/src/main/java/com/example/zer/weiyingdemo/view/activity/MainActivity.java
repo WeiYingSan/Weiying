@@ -1,4 +1,5 @@
 package com.example.zer.weiyingdemo.view.activity;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -13,6 +14,8 @@ public class MainActivity extends AppCompatActivity {
         Log.e("aaaa", "onCreate: &&&"+"zhengenru");
         Log.e("aaaa", "onCreate: &&&"+"wangtianqi");
         Log.e("aaaa", "onCreate: &&&"+"lihaofan");
+        Handler handler = new Handler();
+        handler.sendEmptyMessage(0);
     }
     
 }
