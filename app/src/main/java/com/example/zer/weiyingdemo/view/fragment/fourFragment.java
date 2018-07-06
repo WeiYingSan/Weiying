@@ -9,11 +9,11 @@ import android.view.ViewGroup;
 
 import com.example.zer.weiyingdemo.R;
 
-public class oneFragment extends Fragment {
+public class fourFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        View inflate = inflater.inflate(R.layout.onefragment, null);
+        View inflate = inflater.inflate(R.layout.fourfragment, null);
         return inflate;
     }
 }
