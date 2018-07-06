@@ -23,12 +23,6 @@ public abstract class BaseActivity<P extends BasePresenter> extends AppCompatAct
         presenter = setPresenter();
         if (presenter != null) {
             presenter.attachView(this);
-        }else {
-            try {
-                throw new Exception("您在Activity中没有设置Presenter，请重新创建");
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
         }
     }
 
