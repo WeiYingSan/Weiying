@@ -5,33 +5,5 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="53dp">
-    </View>
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/y130"
-            android:src="@drawable/my_bg_colorful"
-            android:id="@+id/imageview"
-            />
-        <ImageView
-            android:layout_width="@dimen/x30"
-            android:layout_height="@dimen/y30"
-            android:src="@drawable/my_set"
-            android:layout_marginRight="10dp"
-            android:layout_marginTop="60dp"
-            android:layout_alignParentRight="true"
-            />
-    </RelativeLayout>
 
-    <android.support.v7.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/four_reycler"
-        >
-    </android.support.v7.widget.RecyclerView>
 </LinearLayout>
