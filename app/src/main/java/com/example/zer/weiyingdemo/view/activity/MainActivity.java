@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
 
     private BottomTabBar bottom_tabbar;
     private TextView include_title;
-
+    int i=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         getWindow().requestFeature(Window.FEATURE_NO_TITLE);
@@ -50,36 +50,6 @@ public class MainActivity extends AppCompatActivity {
                 .addTabItem("发现", R.drawable.fancy_select, R.drawable.fancy, threeFragment.class)
                 .addTabItem("我的", R.drawable.my_select, R.drawable.my, fourFragment.class)
                 .setTabBarBackgroundResource(R.drawable.a)
-                .setOnTabChangeListener(new BottomTabBar.OnTabChangeListener() {
-                    @Override
-                    public void onTabChange(int position, String name, View view) {
-                        switch (position){
-                            case 0:
-                                if (name.equals("精选")){
-                                    include_title.setVisibility(View.GONE);
-                                }
-                                break;
-                            case 1:
-                                if (name.equals("专题")){
-                                    include_title.setText(name);
-                                    include_title.setVisibility(View.VISIBLE);
-                                }
-                                break;
-                            case 2:
-                                if (name.equals("发现")){
-                                    include_title.setText(name);
-                                    include_title.setVisibility(View.VISIBLE);
-                                }
-                                break;
-                            case 3:
-                                if (name.equals("我的")){
-                                    include_title.setText(name);
-                                    include_title.setVisibility(View.VISIBLE);
-                                }
-                                break;
-                        }
-                    }
-                })
                 .setCurrentTab(0);
     }
     
