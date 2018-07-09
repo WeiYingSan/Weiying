@@ -1,4 +1,4 @@
 package com.example.zer.weiyingdemo.model.http;
 
-public class Api {
+public class BaseAPI {
 }
