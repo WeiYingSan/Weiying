@@ -55,16 +55,27 @@ public class MainActivity extends AppCompatActivity {
                     public void onTabChange(int position, String name, View view) {
                         switch (position){
                             case 0:
-                                include_title.setText(name);
+                                if (name.equals("精选")){
+                                    include_title.setVisibility(View.GONE);
+                                }
                                 break;
                             case 1:
-                                include_title.setText(name);
+                                if (name.equals("专题")){
+                                    include_title.setText(name);
+                                    include_title.setVisibility(View.VISIBLE);
+                                }
                                 break;
                             case 2:
-                                include_title.setText(name);
+                                if (name.equals("发现")){
+                                    include_title.setText(name);
+                                    include_title.setVisibility(View.VISIBLE);
+                                }
                                 break;
                             case 3:
-                                include_title.setText(name);
+                                if (name.equals("我的")){
+                                    include_title.setText(name);
+                                    include_title.setVisibility(View.VISIBLE);
+                                }
                                 break;
                         }
                     }
