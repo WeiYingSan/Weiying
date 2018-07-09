@@ -2,7 +2,15 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
-
+    <TextView
+        android:text="专题"
+        android:textColor="#fff"
+        android:background="#f00"
+        android:paddingTop="@dimen/dp_10"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_66"
+        android:gravity="center"
+        />
     <android.support.v7.widget.RecyclerView
         android:id="@+id/two_recycle"
         android:layout_width="match_parent"

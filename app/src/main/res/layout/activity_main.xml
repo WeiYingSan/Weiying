@@ -16,7 +16,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/bg_colorful">
-        <include layout="@layout/title_layout"/>
         <com.hjm.bottomtabbar.BottomTabBar
             android:id="@+id/bottom_tabbar"
             android:layout_width="match_parent"
