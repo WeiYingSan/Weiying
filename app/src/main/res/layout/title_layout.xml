@@ -6,10 +6,10 @@
     <TextView
         android:id="@+id/include_title"
         android:layout_width="match_parent"
-        android:layout_height="56dp" 
+        android:layout_height="66dp"
         android:text="精选"
         android:gravity="center"
         android:textSize="20dp"
-        android:background="#f44336"
+        android:background="#f00"
         android:textColor="#fff"/>
 </LinearLayout>
