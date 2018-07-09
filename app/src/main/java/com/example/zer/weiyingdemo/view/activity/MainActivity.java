@@ -10,6 +10,7 @@ import android.view.WindowManager;
 import android.widget.TextView;
 
 import com.example.zer.weiyingdemo.R;
+import com.example.zer.weiyingdemo.model.http.RetrofitUtils;
 import com.example.zer.weiyingdemo.view.fragment.fourFragment;
 import com.example.zer.weiyingdemo.view.fragment.oneFragment;
 import com.example.zer.weiyingdemo.view.fragment.threeFragment;
@@ -51,6 +52,8 @@ public class MainActivity extends AppCompatActivity {
                 .addTabItem("我的", R.drawable.my_select, R.drawable.my, fourFragment.class)
                 .setTabBarBackgroundResource(R.drawable.a)
                 .setCurrentTab(0);
+        
     }
+
     
 }
