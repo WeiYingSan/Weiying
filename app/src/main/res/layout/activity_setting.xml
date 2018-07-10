@@ -1,6 +1,122 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/bg_colorful"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_66">
+        <TextView
+            android:textSize="@dimen/dp_16"
+            android:text="设置"
+            android:textColor="#fff"
+            android:background="#f00"
+            android:paddingTop="@dimen/dp_10"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            />
+        <ImageView
+            android:layout_width="@dimen/dp_20"
+            android:layout_height="@dimen/dp_20"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp_15"
+            android:src="@drawable/back"
+            android:id="@+id/setting_back"
+            />
+    </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_marginTop="@dimen/dp_15"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_50"
+            android:id="@+id/setting_relative1"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#CD950C"
+                android:text="推荐给好友"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/dp_15"
+                android:textColor="#DBDBDB" />
+            <ImageView
+                android:layout_width="@dimen/dp_13"
+                android:layout_height="@dimen/dp_13"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/dp_15"
+                android:background="@drawable/right" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_marginTop="@dimen/dp_2"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_50">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#CD950C"
+                android:text="清理缓存"
+                android:paddingLeft="@dimen/dp_15"
+                android:gravity="center_vertical"
+                android:textColor="#DBDBDB" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/dp_15"
+                android:text="0kb"
+                android:textColor="#fff"
+                 />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_marginTop="@dimen/dp_15"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_50"
+            android:id="@+id/setting_relative3"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#CD950C"
+                android:text="关于我们"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/dp_15"
+                android:textColor="#DBDBDB" />
+            <ImageView
+                android:layout_width="@dimen/dp_13"
+                android:layout_height="@dimen/dp_13"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/dp_15"
+                android:background="@drawable/right" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_marginTop="@dimen/dp_2"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_50"
+            android:id="@+id/setting_relative4"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#CD950C"
+                android:text="建议反馈"
+                android:paddingLeft="@dimen/dp_15"
+                android:gravity="center_vertical"
+                android:textColor="#DBDBDB" />
+            <ImageView
+                android:layout_width="@dimen/dp_13"
+                android:layout_height="@dimen/dp_13"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/dp_15"
+                android:background="@drawable/right" />
+        </RelativeLayout>
 
 </LinearLayout>
