@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     >
-    <ScrollView
+    <com.example.zer.weiyingdemo.utils.GradationScrollView
         android:id="@+id/shou_scroll"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -85,11 +85,11 @@
             </RelativeLayout>
 
         </LinearLayout>
-    </ScrollView>
+    </com.example.zer.weiyingdemo.utils.GradationScrollView>
 
     <TextView
         android:id="@+id/title"
-        android:alpha="0"
+
         android:textSize="@dimen/dp_16"
         android:text="精选"
         android:textColor="#fff"
