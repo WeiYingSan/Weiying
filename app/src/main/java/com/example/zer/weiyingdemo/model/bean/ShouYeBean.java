@@ -67,7 +67,7 @@ public class ShouYeBean {
              * id : ff8080815a5f91db015a68a763b750d5
              * tagName : 星际穿越
              * createdtime : 2017-02-23 09:48:04
-             * enname : 
+             * enname :
              */
 
             private int refCounter;
@@ -146,15 +146,25 @@ public class ShouYeBean {
 
         public static class ListBean {
             /**
+<<<<<<< HEAD
              * showStyle : 
+=======
+             * showStyle :
+>>>>>>> origin/master
              * loadType : videoList
              * changeOpenFlag : false
              * line : 1
              * showType : banner
              * childList : [{"airTime":2015,"duration":"01:52:15","loadType":"video","score":0,"angleIcon":"http://phonemovie.ks3-cn-beijing.ksyun.com/image/2017/05/09/1494296614609066838.png","dataId":"d459e58100af4e5aa6d6d09070442878","description":"未来世界，水资源短缺引发了连绵的战争。人们相互厮杀，争夺有限的资源，地球变成了血腥十足的杀戮死战场。面容恐怖的不死乔在戈壁山谷建立了难以撼动的强大武装王国，他手下的战郎驾驶装备尖端武器的战车四下抢掠，杀伐无度，甚至将自己的孩子打造成战争机器。在最近一次行动中，不死乔的得力战将弗瑞奥萨（查理兹·塞隆 Charlize Theron 饰）带着生育者们叛逃，这令不死乔恼羞成怒，发誓要追回生育者。经历了激烈的追逐战和摧毁力极强的沙尘暴，弗瑞奥萨和作为血主的麦克斯（汤姆·哈迪 Tom Hardy 饰）被迫上路，而身后不仅有不死乔的追兵，还有汽油镇、子弹农场的重兵追逐。 \r\n　　末世战争，全面爆发\u2026\u2026","loadURL":"http://api.svipmovie.com/front/videoDetailApi/videoDetail.do?mediaId=d459e58100af4e5aa6d6d09070442878","shareURL":"http://m.svipmovie.com/#/moviedetails/d459e58100af4e5aa6d6d09070442878","pic":"http://phonemovie.ks3-cn-beijing.ksyun.com/image/2017/07/20/1500546379995032336.jpg","title":"汤姆哈迪上演末日狂飙","roomId":""},{"airTime":2010,"duration":"01:40:31","loadType":"video","score":0,"angleIcon":"http://phonemovie.ks3-cn-beijing.ksyun.com/image/2017/05/09/1494296614609066838.png","dataId":"1f7948116a4b4d16afd1d67484c4756e","description":"一道极强的亮光，将分处五大洲的8个人带到了一片未知所在。他们身背降落伞从高空坠落，继而落入一望无边的雨林。这群人中有车臣部队战士、以色列国防军、墨西哥特种部队成员、FBI通缉的要犯、日本黑帮稻川会头目以及一名与其他人格格不入的医生。他们彼此互不相识，也不知道为何被带到了这片陌生丛林。在罗伊斯（阿德连·布隆迪 Adrien Brody 饰）的带领下，众人开始朝制高点进发，最终发现他们竟然置身在一颗外星球中。与此同时，凶猛邪恶的猛兽接连向他们袭来，罗伊斯意识到，他们不过是一群外星生物选出的猎物，而这片雨林正是外星人的狩猎场。 \r\n　　危机四伏，这些无所依靠的人类不得不去面对身形巨大、嗜好杀戮的铁血战士\u2026\u2026","loadURL":"http://api.svipmovie.com/front/videoDetailApi/videoDetail.do?mediaId=1f7948116a4b4d16afd1d67484c4756e","shareURL":"http://m.svipmovie.com/#/moviedetails/1f7948116a4b4d16afd1d67484c4756e","pic":"http://phonemovie.ks3-cn-beijing.ksyun.com/image/2017/07/12/1499829348897053082.jpg","title":"布洛迪异星血腥厮杀","roomId":""},{"airTime":2012,"duration":"01:39:15","loadType":"video","score":0,"angleIcon":"http://phonemovie.ks3-cn-beijing.ksyun.com/image/2017/05/09/1494296614609066838.png","dataId":"e2f1464a598045f2bfe3cd172ab0c48c","description":"尼克·弗林是个年轻作家，从小和单身母亲朱迪相依为命的他早就忘记父亲的样子，直到一天接到电话，自称他父亲的乔纳森（罗伯特·德尼罗被房东赶了出来，找他 借车搬家。天上掉下来个老爸，也是个落魄作家，还带着全部行李，让弗林在室友面前非常难堪。","loadURL":"http://api.svipmovie.com/front/videoDetailApi/videoDetail.do?mediaId=e2f1464a598045f2bfe3cd172ab0c48c","shareURL":"http://m.svipmovie.com/#/moviedetails/e2f1464a598045f2bfe3cd172ab0c48c","pic":"http://phonemovie.ks3-cn-beijing.ksyun.com/image/2017/08/09/1502262981162083695.jpg","title":"父子间相互的毁灭与救赎","roomId":""},{"airTime":2015,"duration":"02:05:36","loadType":"video","score":0,"angleIcon":"http://phonemovie.ks3-cn-beijing.ksyun.com/image/2017/05/09/1494296614609066838.png","dataId":"2b6ae30e59af48fb8a8cbec28535f3cd","description":"天网拥有独立意识后，对创造它的人类展开血腥屠杀。未来战争如火如荼，凯尔·里斯（杰·科特尼 Jai Courtney 饰）发现眼前的世界与预计中完全不同，一场关乎人类未来的\u201c人机\u201d大战正式上演。","loadURL":"http://api.svipmovie.com/front/videoDetailApi/videoDetail.do?mediaId=2b6ae30e59af48fb8a8cbec28535f3cd","shareURL":"http://m.svipmovie.com/#/moviedetails/2b6ae30e59af48fb8a8cbec28535f3cd","pic":"http://phonemovie.ks3-cn-beijing.ksyun.com/image/2017/07/04/1499146456696339968.jpg","title":"阿诺霸气依旧硬汉归来","roomId":""},{"airTime":2015,"duration":"02:10:03","loadType":"video","score":0,"angleIcon":"http://phonemovie.ks3-cn-beijing.ksyun.com/image/2017/05/09/1494296614609066838.png","dataId":"70ddeda75e8b4692aee8cdd4417bb4b7","description":"中年男子弗兰克·沃克和身边的女孩凯茜·牛顿大吐苦水，他慨叹现代社会充斥了战争、饥饿、灾难以及种种不公，他回忆起自己童年时代的一段经历。当年小小的弗兰克带着自己的得意发明来到某主题公园，结果却碰了一鼻子灰。而美丽的少女雅典娜偷偷伸出援手，让他见识了令人咋舌的未来世界。","loadURL":"http://api.svipmovie.com/front/videoDetailApi/videoDetail.do?mediaId=70ddeda75e8b4692aee8cdd4417bb4b7","shareURL":"http://m.svipmovie.com/#/moviedetails/70ddeda75e8b4692aee8cdd4417bb4b7","pic":"http://phonemovie.ks3-cn-beijing.ksyun.com/image/2017/07/27/1501132249312053156.jpg","title":"克鲁尼开启时空穿越","roomId":""},{"airTime":2015,"duration":"02:05:11","loadType":"video","score":0,"angleIcon":"http://phonemovie.ks3-cn-beijing.ksyun.com/image/2017/05/09/1494296614609066838.png","dataId":"5635205e57764138b0356910a1ce3a9a","description":"　资深特工伊森·亨特（汤姆·克鲁斯 Tom Cruise 饰）也有百密一疏时刻，他在接收最新任务时遭到神秘组织\u201c辛迪加\u201d的暗算落入对方手中。辛迪加是一支由全球各地前特工组成的秘密组织，此前一直被CIA视为空穴来风。在对方成员伊莎·福斯特（丽贝卡·弗格森 Rebecca Ferguson 饰）的帮助下，伊森逃出生天，并及时向威廉\u2022布莱德（杰瑞米·雷纳 Jeremy Renner 饰）汇报了辛迪加确切存在的消息。然而此时布莱德的日子并不好过，他负责的IMF机构因俄罗斯核弹头等事件遭到CIA指控并责令解散。在得知该组织密谋刺杀奥地利总统时，伊森联系上了老搭档班吉·邓恩（西蒙·佩吉 Simon Pegg 饰）展开行动，并于谜样女郎伊莎再度相会。 \r\n　　接下来的一连串事件中，辛迪加的真面目逐渐揭开，而他们也终于显露出真实的目的\u2026\u2026","loadURL":"http://api.svipmovie.com/front/videoDetailApi/videoDetail.do?mediaId=5635205e57764138b0356910a1ce3a9a","shareURL":"http://m.svipmovie.com/#/moviedetails/5635205e57764138b0356910a1ce3a9a","pic":"http://phonemovie.ks3-cn-beijing.ksyun.com/image/2017/07/20/1500545042468021174.jpg","title":"阿汤哥搏命徒手扒飞机","roomId":""},{"airTime":0,"duration":"","loadType":"html","score":0,"angleIcon":"","dataId":"","description":"","loadURL":"http://h5.svipmovie.com/special/ff80808163008060016362568a3b4f21.shtml","shareURL":"","pic":"http://phonemovie.ks3-cn-beijing.ksyun.com/image/2018/05/21/1526885243594025101.jpg","title":"那些年震撼我们的超级英雄-漫威篇","roomId":""}]
+<<<<<<< HEAD
              * moreURL : 
              * title : Banner
              * bigPicShowFlag : 
+=======
+             * moreURL :
+             * title : Banner
+             * bigPicShowFlag :
+>>>>>>> origin/master
              */
 
             private String showStyle;
@@ -247,13 +257,21 @@ public class ShouYeBean {
                  * score : 0
                  * angleIcon : http://phonemovie.ks3-cn-beijing.ksyun.com/image/2017/05/09/1494296614609066838.png
                  * dataId : d459e58100af4e5aa6d6d09070442878
+<<<<<<< HEAD
                  * description : 未来世界，水资源短缺引发了连绵的战争。人们相互厮杀，争夺有限的资源，地球变成了血腥十足的杀戮死战场。面容恐怖的不死乔在戈壁山谷建立了难以撼动的强大武装王国，他手下的战郎驾驶装备尖端武器的战车四下抢掠，杀伐无度，甚至将自己的孩子打造成战争机器。在最近一次行动中，不死乔的得力战将弗瑞奥萨（查理兹·塞隆 Charlize Theron 饰）带着生育者们叛逃，这令不死乔恼羞成怒，发誓要追回生育者。经历了激烈的追逐战和摧毁力极强的沙尘暴，弗瑞奥萨和作为血主的麦克斯（汤姆·哈迪 Tom Hardy 饰）被迫上路，而身后不仅有不死乔的追兵，还有汽油镇、子弹农场的重兵追逐。 
+=======
+                 * description : 未来世界，水资源短缺引发了连绵的战争。人们相互厮杀，争夺有限的资源，地球变成了血腥十足的杀戮死战场。面容恐怖的不死乔在戈壁山谷建立了难以撼动的强大武装王国，他手下的战郎驾驶装备尖端武器的战车四下抢掠，杀伐无度，甚至将自己的孩子打造成战争机器。在最近一次行动中，不死乔的得力战将弗瑞奥萨（查理兹·塞隆 Charlize Theron 饰）带着生育者们叛逃，这令不死乔恼羞成怒，发誓要追回生育者。经历了激烈的追逐战和摧毁力极强的沙尘暴，弗瑞奥萨和作为血主的麦克斯（汤姆·哈迪 Tom Hardy 饰）被迫上路，而身后不仅有不死乔的追兵，还有汽油镇、子弹农场的重兵追逐。
+>>>>>>> origin/master
                  　　末世战争，全面爆发……
                  * loadURL : http://api.svipmovie.com/front/videoDetailApi/videoDetail.do?mediaId=d459e58100af4e5aa6d6d09070442878
                  * shareURL : http://m.svipmovie.com/#/moviedetails/d459e58100af4e5aa6d6d09070442878
                  * pic : http://phonemovie.ks3-cn-beijing.ksyun.com/image/2017/07/20/1500546379995032336.jpg
                  * title : 汤姆哈迪上演末日狂飙
+<<<<<<< HEAD
                  * roomId : 
+=======
+                 * roomId :
+>>>>>>> origin/master
                  */
 
                 private int airTime;
