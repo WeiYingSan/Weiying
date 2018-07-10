@@ -1,6 +1,8 @@
 package com.example.zer.weiyingdemo.view.adapter;
 
 import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -12,6 +14,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.example.zer.weiyingdemo.R;
 import com.example.zer.weiyingdemo.model.bean.ShouYeBean;
+import com.example.zer.weiyingdemo.view.activity.DianYingActivity;
 
 import java.util.List;
 
@@ -34,7 +37,7 @@ public class TwoAdapter extends RecyclerView.Adapter{
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, final int position) {
         ViewHolder viewHolder = (ViewHolder) holder;
         viewHolder.two_item_text.setText(list.get(position).getTitle());
         if (list.get(position).getChildList().get(0).getPic().equals("")){
@@ -49,6 +52,17 @@ public class TwoAdapter extends RecyclerView.Adapter{
         }else{
             viewHolder.two_item_text.setText(list.get(position).getTitle());
         }
+        viewHolder.two_item_img.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context, DianYingActivity.class);
+                String loadURL = list.get(position).getChildList().get(0).getLoadURL();
+                String title = list.get(position).getTitle();
+                intent.putExtra("title",title);
+                intent.putExtra("url",loadURL);
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override
