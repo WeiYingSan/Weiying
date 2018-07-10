@@ -48,7 +48,6 @@ public class WelcomeActivity extends AppCompatActivity{
         edit.putInt("count", count);
         edit.commit();
         setContentView(R.layout.activity_welcome);
-
         iv_welcome_bg = findViewById(R.id.iv_welcome_bg);
         iv_welcome_bg.setImageResource(R.drawable.welcome);
         iv_welcome_bg.animate().scaleX(1.12f).scaleY(1.12f).setDuration(2000).setStartDelay(100).start();
