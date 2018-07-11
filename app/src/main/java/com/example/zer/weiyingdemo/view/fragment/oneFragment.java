@@ -24,7 +24,6 @@ import com.example.zer.weiyingdemo.view.adapter.JingCaiAdapter;
 import com.example.zer.weiyingdemo.view.interfaces.SelecTionInterV;
 import com.youth.banner.Banner;
 import com.youth.banner.loader.ImageLoader;
-
 import java.util.ArrayList;
 import java.util.List;
 

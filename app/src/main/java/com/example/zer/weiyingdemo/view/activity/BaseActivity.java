@@ -43,7 +43,6 @@ public abstract class BaseActivity<P extends BasePresenter> extends AppCompatAct
             presenter.attachView(this);
         }
     }
-
     abstract int getChildView();
     abstract void initView();
     abstract void initData();

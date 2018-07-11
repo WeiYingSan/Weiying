@@ -19,6 +19,7 @@ public abstract class BaseFragment<B extends BasePresenter> extends Fragment imp
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(getChildFragment(), container, false);
         initView(view);
+        initFragment();
         initData();
         return view;
     }
