@@ -59,18 +59,6 @@ public class oneFragment extends BaseFragment<SelecTionPresenter> implements Sel
     @Override
     protected void initData() {
         presenter.toM();
-        //scroll滑动监听
-        scrollListenner();
-    }
-
-    @TargetApi(Build.VERSION_CODES.M)
-    private void scrollListenner() {
-        shou_scroll.setOnScrollChangeListener(new View.OnScrollChangeListener() {
-            @Override
-            public void onScrollChange(View v, int scrollX, int scrollY, int oldScrollX, int oldScrollY) {
-
-            }
-        });
     }
 
     @Override

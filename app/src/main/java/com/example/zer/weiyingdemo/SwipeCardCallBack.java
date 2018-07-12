@@ -5,22 +5,14 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.View;
 
+import com.example.zer.weiyingdemo.model.bean.DiscoverBean;
+
 import java.util.List;
 
 public class SwipeCardCallBack extends ItemTouchHelper.SimpleCallback {
-    private List<SwipeCardBean> mDatas;
-    private UniversalAdapter adapter;
-    private RecyclerView mRv;
-
-    public SwipeCardCallBack(List<SwipeCardBean> mDatas, UniversalAdapter adapter, RecyclerView mRv) {
-        super(0,
-                ItemTouchHelper.LEFT | ItemTouchHelper.UP |
-                        ItemTouchHelper.RIGHT | ItemTouchHelper.DOWN
-        );
-        this.mDatas = mDatas;
-        this.adapter = adapter;
-        this.mRv = mRv;
-    }
+    List<DiscoverBean.RetBean.ListBean> list;
+    UniversalAdapter mAdatper;
+    RecyclerView mActivity_review;
 
     public SwipeCardCallBack(int dragDirs, int swipeDirs) {
         super(dragDirs, swipeDirs);
@@ -37,6 +29,16 @@ public class SwipeCardCallBack extends ItemTouchHelper.SimpleCallback {
         );
     }
 
+    public SwipeCardCallBack(List<DiscoverBean.RetBean.ListBean> list, UniversalAdapter mAdatper, RecyclerView mActivity_review) {
+        super(0,
+                ItemTouchHelper.LEFT | ItemTouchHelper.UP |
+                        ItemTouchHelper.RIGHT | ItemTouchHelper.DOWN
+        );
+        this.list=list;
+        this.mAdatper=mAdatper;
+        this.mActivity_review=mActivity_review;
+    }
+
     @Override
     public boolean onMove(RecyclerView recyclerView,
                           RecyclerView.ViewHolder viewHolder,
@@ -47,9 +49,9 @@ public class SwipeCardCallBack extends ItemTouchHelper.SimpleCallback {
     @Override
     public void onSwiped(RecyclerView.ViewHolder viewHolder, int direction) {
         //当已经滑动删除了的时候会被回掉--删除数据，循环的效果
-        SwipeCardBean remove = mDatas.remove(viewHolder.getLayoutPosition());
-        mDatas.add(0, remove);
-        adapter.notifyDataSetChanged();
+        DiscoverBean.RetBean.ListBean remove = list.remove(viewHolder.getLayoutPosition());
+        list.add(0, remove);
+        mAdatper.notifyDataSetChanged();
     }
 
     @Override
@@ -68,7 +70,7 @@ public class SwipeCardCallBack extends ItemTouchHelper.SimpleCallback {
         for (int i = 0; i < itemcount; i++) {
             //执行
             View view = recyclerView.getChildAt(i);
-            //几个view层叠的效果，错开的效果--便宜动画+缩放动画
+            //几个view层叠的效果，错开的效果--偏移动画+缩放动画
             int level = itemcount - i - 1;
             if (level > 0) {
                 if (level < CardConfig.MAX_SHOW_COUNT - 1) {
@@ -77,10 +79,7 @@ public class SwipeCardCallBack extends ItemTouchHelper.SimpleCallback {
                     view.setTranslationY((float) (1 - CardConfig.SCALE_GAP * level + fraction * CardConfig.SCALE_GAP));
                 }
             }
-
-
         }
-
     }
 
 }
