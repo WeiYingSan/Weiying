@@ -7,10 +7,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.zer.weiyingdemo.R;
 import com.example.zer.weiyingdemo.model.http.RetrofitUtils;
+import com.example.zer.weiyingdemo.utils.GlideRound;
 import com.example.zer.weiyingdemo.view.fragment.fourFragment;
 import com.example.zer.weiyingdemo.view.fragment.oneFragment;
 import com.example.zer.weiyingdemo.view.fragment.threeFragment;
@@ -24,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
     private BottomTabBar bottom_tabbar;
     private TextView include_title;
     int i=0;
+    private ImageView cela_tou;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         getWindow().requestFeature(Window.FEATURE_NO_TITLE);
@@ -40,8 +44,10 @@ public class MainActivity extends AppCompatActivity {
         }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        bottom_tabbar = findViewById(R.id.bottom_tabbar);
-        include_title = findViewById(R.id.include_title);
+        //找控件
+        findId();
+        //侧拉头像赋值
+        ceLaTouData();
         bottom_tabbar.init(getSupportFragmentManager())
                 .setImgSize(25, 25)//设置ICON图片的尺寸
                 .setFontSize(10)//设置文字的尺寸
@@ -55,5 +61,15 @@ public class MainActivity extends AppCompatActivity {
         
     }
 
-    
+    private void ceLaTouData() {
+        GlideRound.setGlideRound(this,R.drawable.c,cela_tou);
+    }
+
+    private void findId() {
+        bottom_tabbar = findViewById(R.id.bottom_tabbar);
+        include_title = findViewById(R.id.include_title);
+        cela_tou = findViewById(R.id.cela_tou);
+    }
+
+
 }

@@ -2,6 +2,7 @@ package com.example.zer.weiyingdemo.view.fragment;
 
 import android.annotation.TargetApi;
 import android.content.Context;
+import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -39,7 +40,7 @@ public class oneFragment extends BaseFragment<SelecTionPresenter> implements Sel
     private RecyclerView jingcairecy;
     private List<ShouYeBean.RetBean.ListBean.ChildListBean> jingcailist;
     private JingCaiAdapter jingCaiAdapter;
-    private ScrollView shou_scroll;
+    private GradationScrollView shou_scroll;
     private TextView title;
 
     @Override
@@ -58,15 +59,40 @@ public class oneFragment extends BaseFragment<SelecTionPresenter> implements Sel
     }
     @Override
     protected void initData() {
+        title.setVisibility(View.GONE);
+        presenter = getPresenter();
+        presenter.attachView(this);
         presenter.toM();
+        //scroll滑动监听
+        scrollListenner();
+    }
+
+    private void scrollListenner() {
+        shou_scroll.setScrollViewListener(new GradationScrollView.ScrollViewListener() {
+            @Override
+            public void onScrollChanged(GradationScrollView scrollView, int x, int y, int oldx, int oldy) {
+                if (y <= 1) {  //设置标题的背景颜色
+                    title.setBackgroundColor(Color.argb((int) 0, 144,151,166));
+                    title.setVisibility(View.GONE);
+                } else if (y > 0 && y <= 500) { //滑动距离小于banner图的高度时，设置背景和字体颜色颜色透明度渐变
+                    title.setVisibility(View.VISIBLE);
+                    float scale = (float) y / 500;
+                    float alpha = (255 * scale);
+                    title.setTextColor(Color.argb((int) alpha, 255,255,255));
+                    title.setBackgroundColor(Color.argb((int) alpha, 144,151,166));
+                } else {  //滑动到banner下面设置普通颜色
+                    title.setBackgroundColor(Color.argb((int) 255, 144,151,166));
+                }
+            }
+        });
     }
 
     @Override
     protected void initView(View view) {
         this.view = view;
-        if(presenter==null){
-            presenter = getPresenter();
-        }
+//        if(presenter==null){
+//            presenter = getPresenter();
+//        }
         findId();
     }
 

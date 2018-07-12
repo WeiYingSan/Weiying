@@ -5,11 +5,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.zer.weiyingdemo.R;
@@ -53,14 +55,27 @@ public class TwoAdapter extends RecyclerView.Adapter{
             viewHolder.two_item_text.setText(list.get(position).getTitle());
         }
         viewHolder.two_item_img.setOnClickListener(new View.OnClickListener() {
+            private String id;
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(context, DianYingActivity.class);
-                String loadURL = list.get(position).getChildList().get(0).getLoadURL();
-                String title = list.get(position).getTitle();
-                intent.putExtra("title",title);
-                intent.putExtra("url",loadURL);
-                context.startActivity(intent);
+                String moreURL = list.get(position).getMoreURL();
+               if (!moreURL.equals("")){
+                   String[] split = moreURL.split("=");
+                   for (int i = 0; i < split.length; i++) {
+                       String[] b = split[1].split("&");
+                       for (int j = 0; j < b.length; j++) {
+                           id = b[0];
+                           Log.e("zer", "onClick: %%%%"+id);
+                       }
+                   }
+                   String title = list.get(position).getTitle();
+                   Intent intent = new Intent(context, DianYingActivity.class);
+                   intent.putExtra("id",id);
+                   intent.putExtra("title",title);
+                   context.startActivity(intent);
+               }else {
+                   Toast.makeText(context, "程序猿正在开发中...", Toast.LENGTH_SHORT).show();
+               }
             }
         });
     }

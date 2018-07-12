@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    >
+   <RelativeLayout
+       android:layout_width="@dimen/dp_100"
+       android:layout_height="@dimen/dp_130"
+       android:gravity="center"
+       >
+       <RelativeLayout
+           android:alpha="0.5"
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:background="#7D7D7D"
+           ></RelativeLayout>
+         <ImageView
+             android:id="@+id/briefing_recy_img"
+             android:scaleType="fitXY"
+             android:layout_margin="@dimen/dp_5"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent" />
+   </RelativeLayout>
+    <TextView
+        android:singleLine="true"
+        android:layout_marginTop="@dimen/dp_5"
+        android:textSize="@dimen/dp_12"
+        android:textColor="#fff"
+        android:layout_width="@dimen/dp_95"
+        android:layout_height="wrap_content"
+        android:id="@+id/briefing_recy_title"
+        />
+</LinearLayout>

@@ -40,7 +40,7 @@ public class twoFragment extends BaseFragment<TwoFragmentPre> implements ITwoFra
     @Override
     protected void initView(View inflate) {
         two_recycle = inflate.findViewById(R.id.two_recycle);
-        TwoFragmentPre twoFragmentPre = new TwoFragmentPre();
+        TwoFragmentPre twoFragmentPre = getPresenter();
         twoFragmentPre.attachView(this);
         twoFragmentPre.getTwo();
     }

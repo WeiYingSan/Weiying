@@ -1,7 +1,7 @@
 package com.example.zer.weiyingdemo.model.http;
 
 
-import com.example.zer.weiyingdemo.model.bean.DiscoverBean;
+import com.example.zer.weiyingdemo.model.bean.DetailsBean;
 import com.example.zer.weiyingdemo.model.bean.ShouYeBean;
 import io.reactivex.Observable;
 
@@ -17,8 +17,12 @@ public interface BaseAPI {
      @GET("front/homePageApi/homePage.do")
      Observable<ShouYeBean> shouye();
 
-     @POST("front/columns/getVideoList.do")
+     @POST("front/videoDetailApi/videoDetail.do")
      @FormUrlEncoded
-     Observable<DiscoverBean> discover(@Field("catalogId") String catalogId,
-                                       @Field("pnum") String pnum);
+     Observable<DetailsBean> details(
+         @Field("mediaId")String mediaid
+     );
+
+     @GET("front/columns/getVideoList.do")
+     Observable<PinDaoBean> pindao(@Query("catalogId")String catalogId);
 }

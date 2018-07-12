@@ -18,7 +18,9 @@ public abstract class BaseFragment<B extends BasePresenter> extends Fragment imp
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(getChildFragment(), container, false);
+        initFragment();
         initView(view);
+        initFragment();
         initData();
         return view;
     }
