@@ -10,7 +10,27 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#f00"/>
+        android:background="@drawable/backc"
+        android:orientation="vertical"
+        >
+        <ImageView
+            android:src="@drawable/c"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_50"
+            android:layout_width="@dimen/dp_80"
+            android:layout_height="@dimen/dp_80"
+            android:id="@+id/cela_tou"
+            />
+        <TextView
+            android:layout_marginTop="@dimen/dp_10"
+            android:textColor="#fff"
+            android:textSize="@dimen/dp_14"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="微影,微一下"
+            />
+    </LinearLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"

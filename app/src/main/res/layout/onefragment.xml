@@ -89,7 +89,6 @@
 
     <TextView
         android:id="@+id/title"
-
         android:textSize="@dimen/dp_16"
         android:text="精选"
         android:textColor="#fff"

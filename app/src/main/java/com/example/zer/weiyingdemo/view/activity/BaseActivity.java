@@ -33,15 +33,27 @@ public abstract class BaseActivity<P extends BasePresenter> extends AppCompatAct
 
         super.onCreate(savedInstanceState);
         setContentView(getChildView());
-        initView();
         initBaseData();
+        initView();
         initData();
     }
     private  void initBaseData(){
         presenter = setPresenter();
-        if (presenter != null) {
+        if (presenter == null) {
             presenter.attachView(this);
         }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if(presenter!=null){
+            presenter.detach();
+        }
+    }
+
+    public P getPresenter() {
+        return presenter;
     }
 
     abstract int getChildView();
