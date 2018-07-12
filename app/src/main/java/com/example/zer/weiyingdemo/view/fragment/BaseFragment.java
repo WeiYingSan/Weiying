@@ -20,6 +20,7 @@ public abstract class BaseFragment<B extends BasePresenter> extends Fragment imp
         View view = inflater.inflate(getChildFragment(), container, false);
         initFragment();
         initView(view);
+        initFragment();
         initData();
         return view;
     }

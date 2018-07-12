@@ -22,4 +22,7 @@ public interface BaseAPI {
      Observable<DetailsBean> details(
          @Field("mediaId")String mediaid
      );
+
+     @GET("front/columns/getVideoList.do")
+     Observable<PinDaoBean> pindao(@Query("catalogId")String catalogId);
 }
