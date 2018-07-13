@@ -1,5 +1,7 @@
 package com.example.zer.weiyingdemo.model;
 
+import android.util.Log;
+
 import com.example.zer.weiyingdemo.model.bean.DetailsBean;
 import com.example.zer.weiyingdemo.model.http.RetrofitUtils;
 import com.example.zer.weiyingdemo.view.interfaces.DetailsInterP;
