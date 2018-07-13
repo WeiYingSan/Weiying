@@ -30,6 +30,7 @@
                     android:layout_width="@dimen/dp_250"
                     android:layout_height="@dimen/dp_36"
                     android:background="#1C1C1C"
+                    android:id="@+id/onefragment_sousuo"
                     >
                     <ImageView
                         android:layout_marginLeft="@dimen/dp_5"

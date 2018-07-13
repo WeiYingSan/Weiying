@@ -3,6 +3,7 @@ package com.example.zer.weiyingdemo.model.http;
 
 import com.example.zer.weiyingdemo.model.bean.CommentBean;
 import com.example.zer.weiyingdemo.model.bean.DetailsBean;
+import com.example.zer.weiyingdemo.model.bean.DiscoverBean;
 import com.example.zer.weiyingdemo.model.bean.PinDaoBean;
 import com.example.zer.weiyingdemo.model.bean.DiscoverBean;
 import com.example.zer.weiyingdemo.model.bean.PinDaoBean;
@@ -26,6 +27,7 @@ public interface BaseAPI {
      @FormUrlEncoded
      Observable<DiscoverBean> discover(@Field("catalogId") String catalogId,
                                        @Field("pnum") String pnum);
+
 
      @POST("front/videoDetailApi/videoDetail.do")
      @FormUrlEncoded

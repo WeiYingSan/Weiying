@@ -1,8 +1,11 @@
 package com.example.zer.weiyingdemo.view.adapter;
 
 import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +15,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.example.zer.weiyingdemo.R;
 import com.example.zer.weiyingdemo.model.bean.PinDaoBean;
+import com.example.zer.weiyingdemo.view.activity.DetailsActivity;
 import com.example.zer.weiyingdemo.view.activity.DianYingActivity;
 
 import java.util.List;
@@ -32,10 +36,22 @@ public class PindaoAdapter extends RecyclerView.Adapter{
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, final int position) {
         ViewHolder viewHolder = (ViewHolder) holder;
         viewHolder.pindao_text.setText(list.get(position).getTitle());
         Glide.with(context).load(list.get(position).getPic()).into(viewHolder.pindao_img);
+        viewHolder.pindao_img.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context,DetailsActivity.class);
+                Bundle bundle = new Bundle();
+                String dataId = list.get(position).getDataId();
+                Log.d("aaaa", "onClick: %%%%"+dataId);
+                bundle.putString("mediaId",dataId);
+                intent.putExtra("bundle",bundle);
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override
