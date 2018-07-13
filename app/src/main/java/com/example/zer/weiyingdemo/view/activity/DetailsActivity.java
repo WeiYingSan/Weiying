@@ -115,7 +115,11 @@ public class DetailsActivity extends BaseActivity<DetailsPresenter> implements D
 
         @Override
         public int getCount() {
-            return fragmentList.size();
+            if(fragmentList!=null){
+                return fragmentList.size();
+            }else {
+                return 0;
+            }
         }
 
         //一定要重写这个返回标题的方法;

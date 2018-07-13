@@ -39,28 +39,13 @@ public class UniversalAdapter extends RecyclerView.Adapter<UniversalAdapter.Univ
 
         //适配器中的条目点击监听
         holder1.itemView.setOnClickListener(new View.OnClickListener() {
-
-            private String mediaId;
-
             @Override
             public void onClick(View v) {
-
-                //先得到url,分割
-                String loadURL = list.get(position).getLoadURL();
-                String[] split = loadURL.split("=");
-                for (int i = 0; i < split.length; i++) {
-                    String a = split[1];
-                    String[] b = a.split("&");
-                    for (int j = 0; j < b.length; j++) {
-                        mediaId = b[0];
-                    }
-                }
-
                 Intent intent = new Intent(context, DetailsActivity.class);
                 Bundle bundle = new Bundle();
                 String dataId = list.get(position).getDataId();
                 Log.d("aaaa", "onClick: %%%%"+dataId);
-                bundle.putString("mediaId",mediaId);
+                bundle.putString("mediaId",dataId);
                 intent.putExtra("bundle",bundle);
                 context.startActivity(intent);
             }
