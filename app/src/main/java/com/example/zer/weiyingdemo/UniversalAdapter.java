@@ -55,10 +55,7 @@ public class UniversalAdapter extends RecyclerView.Adapter<UniversalAdapter.Univ
     @Override
     public int getItemCount() {
         /*return mData == null ? 0 : mData.size();*/
-        if(list!=null){
             return list.size();
-        }
-        return 0;
     }
 
     public class UniversalViewHolder extends RecyclerView.ViewHolder {
