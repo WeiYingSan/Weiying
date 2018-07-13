@@ -9,12 +9,14 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import com.bumptech.glide.Glide;
+import com.example.zer.weiyingdemo.MyApp;
 import com.example.zer.weiyingdemo.R;
+import com.example.zer.weiyingdemo.db.ShouCangBeanDao;
 import com.example.zer.weiyingdemo.model.bean.DetailsBean;
+import com.example.zer.weiyingdemo.model.bean.ShouCangBean;
 import com.example.zer.weiyingdemo.presenter.DetailsPresenter;
 import com.example.zer.weiyingdemo.view.fragment.BriefingSesstionFragment;
 import com.example.zer.weiyingdemo.view.fragment.CommentFragment;
@@ -38,6 +40,7 @@ public class DetailsActivity extends BaseActivity<DetailsPresenter> implements D
     private CommentFragment commentFragment;
     private String mediaId;
     private JCVideoPlayer videocontroller1;
+    private ShouCangBeanDao shouCangBeanDao;
 
     @Override
     protected void onPause() {
@@ -73,8 +76,39 @@ public class DetailsActivity extends BaseActivity<DetailsPresenter> implements D
 
     @Override
     void initData() {
-
+        //GrenDao初始化
+        if(shouCangBeanDao==null){
+            shouCangBeanDao = MyApp.instances.getDaoSession().getShouCangBeanDao();
+        }
     }
+
+    private void shoucanglistenner(final String id, final String pic, final String title) {
+        details_xing.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                details_xing.setClickable(false);
+                List<ShouCangBean> shouCangBeans = shouCangBeanDao.loadAll();
+                Log.d("TAG", "onClick: 收藏数据库内容数量"+shouCangBeans.size());
+                int j=0;
+                for(int i=0;i<shouCangBeans.size();i++){
+                    String url = shouCangBeans.get(i).getUrl();
+                    if(url.equals(id)){
+                        j=1;
+                        break;
+                    }
+                }
+                if(j==0){
+                    ShouCangBean shouCangBean = new ShouCangBean();
+                    shouCangBean.setPic(pic);
+                    shouCangBean.setTitle(title);
+                    shouCangBean.setUrl(id);
+                    shouCangBeanDao.insert(shouCangBean);
+                }
+                details_xing.setClickable(true);
+            }
+        });
+    }
+
     //关联Tablayout
     private void tablayoutdata(DetailsBean.RetBean v) {
         videocontroller1.setUp(v.getHDURL(),v.getTitle());
@@ -94,6 +128,8 @@ public class DetailsActivity extends BaseActivity<DetailsPresenter> implements D
         details_tablelayout.setTabMode(TabLayout.MODE_FIXED);
         //关联
         details_tablelayout.setupWithViewPager(details_viewpager);
+        //收藏监听
+        shoucanglistenner(v.getDataID()+"",v.getPic(),v.getTitle()+"");
     }
 
 
