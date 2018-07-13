@@ -41,5 +41,5 @@ public interface BaseAPI {
      Observable<CommentBean> comment(
              @Field("mediaId")String mediaid
      );
-     
+
 }
