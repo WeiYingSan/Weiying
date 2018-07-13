@@ -39,6 +39,7 @@ public class DetailsActivity extends BaseActivity<DetailsPresenter> implements D
     ArrayList<Fragment> fragmentList=new ArrayList<>();
     private BriefingSesstionFragment briefingSesstionFragment;
     private CommentFragment commentFragment;
+    private String mediaId;
 
 
     @Override
@@ -53,7 +54,7 @@ public class DetailsActivity extends BaseActivity<DetailsPresenter> implements D
         findId();
         Intent intent = getIntent();
         Bundle bundle = intent.getBundleExtra("bundle");
-        String mediaId = bundle.getString("mediaId", "");
+        mediaId = bundle.getString("mediaId", "");
         presenter.toM(mediaId);
 
     }
@@ -72,11 +73,13 @@ public class DetailsActivity extends BaseActivity<DetailsPresenter> implements D
     }
     //关联Tablayout
     private void tablayoutdata(DetailsBean.RetBean v) {
+        details_title.setText(v.getTitle()+"");
         titleList.add("热门");
         titleList.add("附近");
         briefingSesstionFragment = new BriefingSesstionFragment();
         briefingSesstionFragment.setData(v);
         commentFragment = new CommentFragment();
+        commentFragment.setMediaId(mediaId);
         fragmentList.add(briefingSesstionFragment);
         fragmentList.add(commentFragment);
         //适配器

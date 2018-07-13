@@ -39,7 +39,7 @@ public abstract class BaseActivity<P extends BasePresenter> extends AppCompatAct
     }
     private  void initBaseData(){
         presenter = setPresenter();
-        /*if (presenter != null) {
+        /*if (presenter == null) {
             presenter.attachView(this);
         }*/
     }

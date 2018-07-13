@@ -54,8 +54,8 @@ public class BriefingSesstionFragment extends Fragment{
             //得到传过来的值
             childList = d.getList().get(0).getChildList();
             //赋值  导演-简介
-            briefing_daoyan.setText(d.getDirector()+"");
-            briefing_jianjie.setText(d.getDescription()+"");
+            briefing_daoyan.setText("导演:"+d.getDirector()+"");
+            briefing_jianjie.setText("简介:"+d.getDescription()+"");
             briefing_jianjie_default.setText(d.getDescription() + "");
             briefing_zhankai.setText("展开");
 
@@ -94,7 +94,7 @@ public class BriefingSesstionFragment extends Fragment{
     }
     //@Subscribe(threadMode = ThreadMode.MAIN , sticky = true)
     public void setData(DetailsBean.RetBean d){
-        Log.d("TAG", "setData: EventBut传过来的数据"+d.getDirector());
+        Log.d("TAG", "setData: EventBut传过来的数据+BriefingFragment"+d.getDirector());
        this.d=d;
     }
 }
