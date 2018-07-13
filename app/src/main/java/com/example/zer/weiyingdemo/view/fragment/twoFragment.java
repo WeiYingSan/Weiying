@@ -47,8 +47,6 @@ public class twoFragment extends BaseFragment<TwoFragmentPre> implements ITwoFra
     
     @Override
     protected void initData() {
-       /*getPresenter().attachView(this);
-       getPresenter().getTwo();*/
     }
     
     @Override

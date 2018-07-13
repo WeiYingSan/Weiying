@@ -2,7 +2,7 @@ package com.example.zer.weiyingdemo;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.v4.app.FragmentActivity;
+import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -10,12 +10,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import com.bumptech.glide.Glide;
 import com.example.zer.weiyingdemo.model.bean.DiscoverBean;
-import com.example.zer.weiyingdemo.view.activity.DiscoverXq;
-
-import java.util.ArrayList;
+import com.example.zer.weiyingdemo.view.activity.DetailsActivity;
 import java.util.List;
 
 public class UniversalAdapter extends RecyclerView.Adapter<UniversalAdapter.UniversalViewHolder> {
@@ -34,20 +31,25 @@ public class UniversalAdapter extends RecyclerView.Adapter<UniversalAdapter.Univ
     }
 
     @Override
-    public void onBindViewHolder(UniversalViewHolder holder, int position) {
+    public void onBindViewHolder(UniversalViewHolder holder, final int position) {
         UniversalViewHolder holder1=holder;
         holder1.disadapter_name.setText(""+list.get(position).getTitle());
         Glide.with(context).load(list.get(position).getPic()).into(holder1.disadapter_img);
         holder1.disadapter_text.setText(list.get(position).getDescription());
 
         //适配器中的条目点击监听
-       /* holder1.itemView.setOnClickListener(new View.OnClickListener() {
+        holder1.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context, DiscoverXq.class);
+                Intent intent = new Intent(context, DetailsActivity.class);
+                Bundle bundle = new Bundle();
+                String dataId = list.get(position).getDataId();
+                Log.d("aaaa", "onClick: %%%%"+dataId);
+                bundle.putString("mediaId",dataId);
+                intent.putExtra("bundle",bundle);
                 context.startActivity(intent);
             }
-        });*/
+        });
     }
 
     @Override

@@ -59,4 +59,7 @@ greendao {
     schemaVersion 1
     daoPackage 'com.example.zer.weiyingdemo.db'
     targetGenDir 'src/main/java'
+
+    //饺子播放器
+    implementation 'cn.jzvd:jiaozivideoplayer:6.2.9'
 }
