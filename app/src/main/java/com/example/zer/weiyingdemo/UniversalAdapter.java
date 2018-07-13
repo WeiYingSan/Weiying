@@ -41,13 +41,13 @@ public class UniversalAdapter extends RecyclerView.Adapter<UniversalAdapter.Univ
         holder1.disadapter_text.setText(list.get(position).getDescription());
 
         //适配器中的条目点击监听
-        holder1.itemView.setOnClickListener(new View.OnClickListener() {
+       /* holder1.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, DiscoverXq.class);
                 context.startActivity(intent);
             }
-        });
+        });*/
     }
 
     @Override

@@ -46,6 +46,7 @@ public class DianYingActivity extends BaseActivity<DianYingPre> implements IDian
         }else{
             dianying_title.setText(title);
         }
+        presenter.attachView(this);
         presenter.getPindao(id);
     }
 

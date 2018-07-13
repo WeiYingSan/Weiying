@@ -41,4 +41,8 @@ public interface BaseAPI {
      Observable<CommentBean> comment(
              @Field("mediaId")String mediaid
      );
+     @POST("front/columns/getVideoList.do")
+     @FormUrlEncoded
+     Observable<DiscoverBean> discover(@Field("catalogId") String catalogId,
+                                       @Field("pnum") String pnum);
 }
