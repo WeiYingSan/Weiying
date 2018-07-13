@@ -21,6 +21,12 @@ public interface BaseAPI {
      @GET("front/homePageApi/homePage.do")
      Observable<ShouYeBean> shouye();
 
+     @POST("front/columns/getVideoList.do")
+     @FormUrlEncoded
+     Observable<DiscoverBean> discover(@Field("catalogId") String catalogId,
+                                       @Field("pnum") String pnum);
+
+
      @POST("front/videoDetailApi/videoDetail.do")
      @FormUrlEncoded
      Observable<DetailsBean> details(
