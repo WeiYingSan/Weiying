@@ -7,13 +7,12 @@ import android.support.v7.widget.helper.ItemTouchHelper;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.zer.weiyingdemo.CardConfig;
 import com.example.zer.weiyingdemo.R;
 import com.example.zer.weiyingdemo.SwipeCardCallBack;
 import com.example.zer.weiyingdemo.SwipeCardLayoutManager;
-import com.example.zer.weiyingdemo.UniversalAdapter;
+import com.example.zer.weiyingdemo.view.adapter.UniversalAdapter;
 import com.example.zer.weiyingdemo.model.bean.DiscoverBean;
 import com.example.zer.weiyingdemo.presenter.DiscoverPresenter;
 import com.example.zer.weiyingdemo.view.interfaces.IDiscoverView;

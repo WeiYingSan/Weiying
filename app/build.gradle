@@ -1,5 +1,5 @@
 apply plugin: 'com.android.application'
-
+apply plugin: 'org.greenrobot.greendao'
 android {
     compileSdkVersion 27
     defaultConfig {
@@ -39,7 +39,7 @@ dependencies {
     implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
     implementation 'com.squareup.okhttp3:logging-interceptor:3.10.0'
     implementation 'com.squareup.okhttp3:okhttp:3.4.1'
-    implementation 'com.android.support:design:27.1.1'
+
     implementation 'fm.jiecao:jiecaovideoplayer:2.0'
 
     //万能alertdialog颜色
@@ -51,6 +51,13 @@ dependencies {
     implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.0.5.1'
     implementation 'com.scwang.smartrefresh:SmartRefreshHeader:1.0.5.1'//没有使用特殊Header，可以不加这行
 
-    //饺子播放器
-    implementation 'cn.jzvd:jiaozivideoplayer:6.2.9'
+    implementation 'org.greenrobot:greendao:3.2.2' // add library
+    implementation 'org.greenrobot:greendao-generator:3.2.2'
+
+}
+greendao {
+    schemaVersion 1
+    daoPackage 'com.example.zer.weiyingdemo.db'
+    targetGenDir 'src/main/java'
+
 }
