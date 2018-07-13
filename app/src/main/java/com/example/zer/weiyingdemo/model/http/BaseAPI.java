@@ -1,6 +1,7 @@
 package com.example.zer.weiyingdemo.model.http;
 
 
+import com.example.zer.weiyingdemo.model.bean.CommentBean;
 import com.example.zer.weiyingdemo.model.bean.DetailsBean;
 import com.example.zer.weiyingdemo.model.bean.PinDaoBean;
 import com.example.zer.weiyingdemo.model.bean.ShouYeBean;
@@ -27,4 +28,10 @@ public interface BaseAPI {
 
      @GET("front/columns/getVideoList.do")
      Observable<PinDaoBean> pindao(@Query("catalogId")String catalogId);
+
+     @POST("front/Commentary/getCommentList.do")
+     @FormUrlEncoded
+     Observable<CommentBean> comment(
+             @Field("mediaId")String mediaid
+     );
 }

@@ -13,11 +13,12 @@ import com.example.zer.weiyingdemo.view.interfaces.IBaseView;
 
 public abstract class BaseFragment<B extends BasePresenter> extends Fragment implements IBaseView{
     B basePresenter;
+    private View view;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(getChildFragment(), container, false);
+        view = inflater.inflate(getChildFragment(), container, false);
         initFragment();
         initView(view);
         initFragment();
@@ -25,13 +26,17 @@ public abstract class BaseFragment<B extends BasePresenter> extends Fragment imp
         return view;
     }
 
+    @Nullable
+    @Override
+    public View getView() {
+        return view;
+    }
+
     public void initFragment(){
         basePresenter=getPresenter();
     }
-
     protected abstract int getChildFragment();
     protected abstract void initView(View view);
     protected abstract void initData();
     protected abstract B getPresenter();
-    
 }

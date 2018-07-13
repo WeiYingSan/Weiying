@@ -26,8 +26,6 @@
         <activity android:name=".view.activity.DianYingActivity" />
         <activity android:name=".view.activity.SettingActivity" />
         <activity android:name=".view.activity.DetailsActivity"></activity>
-        <activity android:name=".view.activity.FuliActivity"/>
-        
     </application>
 
 </manifest>

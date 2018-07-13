@@ -1,20 +1,68 @@
 package com.example.zer.weiyingdemo.view.fragment;
 
-import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
-import android.view.LayoutInflater;
+
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+
 import android.view.View;
-import android.view.ViewGroup;
 
 import com.example.zer.weiyingdemo.R;
+import com.example.zer.weiyingdemo.model.bean.CommentBean;
+import com.example.zer.weiyingdemo.model.bean.DetailsBean;
+import com.example.zer.weiyingdemo.presenter.CommentPresenter;
+import com.example.zer.weiyingdemo.view.adapter.CommentAdapter;
+import com.example.zer.weiyingdemo.view.interfaces.CommentInterV;
 
-public class CommentFragment extends Fragment{
-    @Nullable
+import java.util.List;
+
+public class CommentFragment extends BaseFragment<CommentPresenter> implements CommentInterV{
+    DetailsBean.RetBean d;
+    private View view;
+    private CommentAdapter commentAdapter;
+    String mediaid;
+    private RecyclerView comment_recy;
+
+    public void setMediaId(String mediaid){
+        this.mediaid=mediaid;
+    }
+
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view=inflater.inflate(R.layout.fragment_comment,container,false);
-        return view;
+    protected int getChildFragment() {
+        return R.layout.fragment_comment;
+    }
+
+    @Override
+    protected void initView(View view) {
+        findId();
+        basePresenter.toM(mediaid);
+    }
+
+    private void findId() {
+        view = getView();
+        comment_recy = view.findViewById(R.id.comment_recy);
+    }
+
+    @Override
+    protected void initData() {
+
+    }
+
+    @Override
+    protected CommentPresenter getPresenter() {
+        return new CommentPresenter(this);
+    }
+
+    private void thisSetAdapter(List<CommentBean.RetBean.ListBean> list){
+        if(commentAdapter==null){
+            commentAdapter = new CommentAdapter(getActivity());
+            commentAdapter.setList(list);
+            comment_recy.setLayoutManager(new LinearLayoutManager(getContext()));
+            comment_recy.setAdapter(commentAdapter);
+        }
+    }
+
+    @Override
+    public void commentinterv(List<CommentBean.RetBean.ListBean> list) {
+        thisSetAdapter(list);
     }
 }
