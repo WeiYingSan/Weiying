@@ -81,8 +81,8 @@ public class DetailsActivity extends BaseActivity<DetailsPresenter> implements D
         Log.d("TAG", "tablayoutdata: 封面"+Uri.parse(v.getPic()));
         videocontroller1.ivThumb.setImageURI(Uri.parse(v.getPic()));
         details_title.setText(v.getTitle()+"");
-        titleList.add("热门");
-        titleList.add("附近");
+        titleList.add("简介");
+        titleList.add("评论");
         briefingSesstionFragment = new BriefingSesstionFragment();
         briefingSesstionFragment.setData(v);
         commentFragment = new CommentFragment();
