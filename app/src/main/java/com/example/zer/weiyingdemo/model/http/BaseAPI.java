@@ -2,6 +2,7 @@ package com.example.zer.weiyingdemo.model.http;
 
 
 import com.example.zer.weiyingdemo.model.bean.DetailsBean;
+import com.example.zer.weiyingdemo.model.bean.PinDaoBean;
 import com.example.zer.weiyingdemo.model.bean.ShouYeBean;
 import io.reactivex.Observable;
 
@@ -9,6 +10,7 @@ import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.Query;
 
 public interface BaseAPI {
      @GET("front/homePageApi/homePage.do")

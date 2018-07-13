@@ -8,22 +8,14 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
 import android.widget.ImageView;
-
-import android.widget.TableLayout;
 import android.widget.TextView;
-
 import com.example.zer.weiyingdemo.R;
 import com.example.zer.weiyingdemo.model.bean.DetailsBean;
 import com.example.zer.weiyingdemo.presenter.DetailsPresenter;
 import com.example.zer.weiyingdemo.view.fragment.BriefingSesstionFragment;
 import com.example.zer.weiyingdemo.view.fragment.CommentFragment;
 import com.example.zer.weiyingdemo.view.interfaces.DetailsInterV;
-
-import org.greenrobot.eventbus.EventBus;
-import org.w3c.dom.Comment;
-
 import java.util.ArrayList;
 import java.util.List;
 
