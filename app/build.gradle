@@ -53,6 +53,7 @@ dependencies {
 
     implementation 'org.greenrobot:greendao:3.2.2' // add library
     implementation 'org.greenrobot:greendao-generator:3.2.2'
+    implementation 'com.squareup.picasso:picasso:2.5.2'
 
 }
 greendao {

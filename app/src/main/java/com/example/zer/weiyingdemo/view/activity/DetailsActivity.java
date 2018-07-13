@@ -21,6 +21,8 @@ import com.example.zer.weiyingdemo.presenter.DetailsPresenter;
 import com.example.zer.weiyingdemo.view.fragment.BriefingSesstionFragment;
 import com.example.zer.weiyingdemo.view.fragment.CommentFragment;
 import com.example.zer.weiyingdemo.view.interfaces.DetailsInterV;
+import com.squareup.picasso.Picasso;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -113,7 +115,8 @@ public class DetailsActivity extends BaseActivity<DetailsPresenter> implements D
     private void tablayoutdata(DetailsBean.RetBean v) {
         videocontroller1.setUp(v.getHDURL(),v.getTitle());
         Log.d("TAG", "tablayoutdata: 封面"+Uri.parse(v.getPic()));
-        videocontroller1.ivThumb.setImageURI(Uri.parse(v.getPic()));
+        //jiecao/jiaozi设置封面
+        Picasso.with(this).load(v.getPic()).into(videocontroller1.ivThumb);
         details_title.setText(v.getTitle()+"");
         titleList.add("简介");
         titleList.add("评论");
