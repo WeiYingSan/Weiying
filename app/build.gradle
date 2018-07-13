@@ -59,5 +59,4 @@ greendao {
     schemaVersion 1
     daoPackage 'com.example.zer.weiyingdemo.db'
     targetGenDir 'src/main/java'
-
 }

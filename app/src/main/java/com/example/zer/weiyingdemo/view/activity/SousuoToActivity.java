@@ -18,6 +18,35 @@ public class SousuoToActivity extends AppCompatActivity {
         Intent intent1 = new Intent();
         intent1.putExtra("lishiback",editdata);
         setResult(12,intent1);
+
+        //网络请求
+        queryinternet(editdata);
+    }
+
+    private void queryinternet(String key) {
+        RetrofitUtils.getInstance().getApi()
+                .getVideoByKeyWord(key)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<FuzzyQueryBean>() {
+            @Override
+            public void onSubscribe(Disposable d) {
+            }
+            @Override
+            public void onNext(FuzzyQueryBean value) {
+                if(value.getCode().equals(200)){
+                   // value.getRet().
+                }else{
+                    Toast.makeText(SousuoToActivity.this, "请求数据失败!", Toast.LENGTH_SHORT).show();
+                }
+            }
+            @Override
+            public void onError(Throwable e) {
+            }
+            @Override
+            public void onComplete() {
+            }
+        });
     }
 
     @Override

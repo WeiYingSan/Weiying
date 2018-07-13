@@ -109,7 +109,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.main_shoucang:
-                tusi();
+                Intent intent2 = new Intent(this, ShouCangActivity.class);
+                startActivity(intent2);
                 break;
             case R.id.main_xiazia:
                 tusi();
