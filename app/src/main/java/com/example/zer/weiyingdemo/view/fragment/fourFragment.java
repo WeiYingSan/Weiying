@@ -17,6 +17,7 @@ import android.widget.Toast;
 import com.afollestad.materialdialogs.color.ColorChooserDialog;
 import com.example.zer.weiyingdemo.R;
 import com.example.zer.weiyingdemo.view.activity.SettingActivity;
+import com.example.zer.weiyingdemo.view.activity.ShouCangActivity;
 
 import static android.content.Context.MODE_PRIVATE;
 
@@ -45,6 +46,7 @@ public class fourFragment extends Fragment implements View.OnClickListener,Color
     private void initData() {
         four_set.setOnClickListener(this);
         four_relative2.setOnClickListener(this);
+        four_relative3.setOnClickListener(this);
         four_relative4.setOnClickListener(this);
     }
 
@@ -68,6 +70,10 @@ public class fourFragment extends Fragment implements View.OnClickListener,Color
                 break;
             case R.id.four_relative2:
                 Toast.makeText(getActivity(),"敬请期待",Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.four_relative3:
+                Intent intent1 = new Intent(getActivity(), ShouCangActivity.class);
+                startActivity(intent1);
                 break;
             case R.id.four_relative4:
                 //颜色的数组

@@ -33,6 +33,7 @@
         <activity android:name=".view.activity.SousuoActivity" />
         <activity android:name=".view.activity.SousuoToActivity"></activity>
         <activity android:name=".view.activity.FuliActivity"/>
+        <activity android:name=".view.activity.ShouCangActivity"/>
     </application>
 
 </manifest>
