@@ -45,7 +45,6 @@ public class threeFragment extends BaseFragment<DiscoverPresenter> implements ID
         discover_huan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(list.size()>0){
                     //page++;
                     int min=1;
                     int max=9;
@@ -57,11 +56,6 @@ public class threeFragment extends BaseFragment<DiscoverPresenter> implements ID
                     ItemTouchHelper.Callback callback=new SwipeCardCallBack(list,mAdatper,mActivity_review);
                     ItemTouchHelper helper=new ItemTouchHelper(callback);
                     helper.attachToRecyclerView(mActivity_review);
-                }else
-                {
-                    mActivity_review.setVisibility(View.GONE);
-                    discover_noitem.setVisibility(View.VISIBLE);
-                }
             }
         });
     }

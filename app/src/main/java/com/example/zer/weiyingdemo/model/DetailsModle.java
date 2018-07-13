@@ -31,7 +31,9 @@ public class DetailsModle {
             }
             @Override
             public void onNext(DetailsBean value) {
-                 detailsInterP.detailsinterp(value.getRet());
+                if(value.getCode().equals("200")){
+                    detailsInterP.detailsinterp(value.getRet());
+                }
             }
             @Override
             public void onError(Throwable e) {
