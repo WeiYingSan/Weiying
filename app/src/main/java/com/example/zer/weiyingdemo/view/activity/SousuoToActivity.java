@@ -3,16 +3,8 @@ package com.example.zer.weiyingdemo.view.activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.Toast;
 
 import com.example.zer.weiyingdemo.R;
-import com.example.zer.weiyingdemo.model.bean.FuzzyQueryBean;
-import com.example.zer.weiyingdemo.model.http.RetrofitUtils;
-
-import io.reactivex.Observer;
-import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.disposables.Disposable;
-import io.reactivex.schedulers.Schedulers;
 
 public class SousuoToActivity extends AppCompatActivity {
 

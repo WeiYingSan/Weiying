@@ -6,6 +6,7 @@ import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.View;
 
 import com.example.zer.weiyingdemo.model.bean.DiscoverBean;
+import com.example.zer.weiyingdemo.view.adapter.UniversalAdapter;
 
 import java.util.List;
 

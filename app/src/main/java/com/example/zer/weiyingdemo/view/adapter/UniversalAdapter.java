@@ -1,4 +1,4 @@
-package com.example.zer.weiyingdemo;
+package com.example.zer.weiyingdemo.view.adapter;
 
 import android.content.Context;
 import android.content.Intent;
@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 import com.bumptech.glide.Glide;
+import com.example.zer.weiyingdemo.R;
 import com.example.zer.weiyingdemo.model.bean.DiscoverBean;
 import com.example.zer.weiyingdemo.view.activity.DetailsActivity;
 import java.util.List;
