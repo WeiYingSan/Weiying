@@ -143,28 +143,28 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.main_zhuti:
                         //颜色的数组
-                        int[] primary = new int[]{
-                                Color.parseColor("#F44336"),
-                                Color.parseColor("#FF0000"),
-                                Color.parseColor("#FFFF00"),
-                                Color.parseColor("#00FF00"),
-                                Color.parseColor("#0000FF"),
-                                Color.parseColor("#00FFFF"),
-                                Color.parseColor("#FF00FF"),
-                                Color.parseColor("#ff6600"),
-                                Color.parseColor("#ff9966"),
-                                Color.parseColor("#cc0000"),
-                                Color.parseColor("#993399"),
-                                Color.parseColor("#cc6699"),
-                                Color.parseColor("#ffccff"),
-                                Color.parseColor("#cc66cc"),
-                                Color.parseColor("#cc33cc"),
-                                Color.parseColor("#00ff33"),
-                                Color.parseColor("#3399cc"),
-                                Color.parseColor("#0066ff"),
-                                Color.parseColor("#0099ff"),
-                                Color.parseColor("#00cc99"),
-                        };
+                int[] primary = new int[]{
+                        Color.parseColor("#F44336"),
+                        Color.parseColor("#FF0000"),
+                        Color.parseColor("#FFFF00"),
+                        Color.parseColor("#00FF00"),
+                        Color.parseColor("#0000FF"),
+                        Color.parseColor("#00FFFF"),
+                        Color.parseColor("#FF00FF"),
+                        Color.parseColor("#ff6600"),
+                        Color.parseColor("#ff9966"),
+                        Color.parseColor("#cc0000"),
+                        Color.parseColor("#993399"),
+                        Color.parseColor("#cc6699"),
+                        Color.parseColor("#ffccff"),
+                        Color.parseColor("#cc66cc"),
+                        Color.parseColor("#cc33cc"),
+                        Color.parseColor("#00ff33"),
+                        Color.parseColor("#3399cc"),
+                        Color.parseColor("#0066ff"),
+                        Color.parseColor("#0099ff"),
+                        Color.parseColor("#00cc99"),
+                };
                 //有些按钮是系统默认的
                 new ColorChooserDialog.Builder(MainActivity.this, R.string.color_palette)
                         .accentMode(true)//
