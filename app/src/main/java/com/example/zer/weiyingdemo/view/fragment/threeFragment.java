@@ -1,68 +1,95 @@
 package com.example.zer.weiyingdemo.view.fragment;
 
-
-import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
-import android.view.LayoutInflater;
+import android.util.Log;
 import android.view.View;
-import android.view.ViewGroup;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.zer.weiyingdemo.CardConfig;
 import com.example.zer.weiyingdemo.R;
-import com.example.zer.weiyingdemo.SwipeCardBean;
 import com.example.zer.weiyingdemo.SwipeCardCallBack;
 import com.example.zer.weiyingdemo.SwipeCardLayoutManager;
 import com.example.zer.weiyingdemo.UniversalAdapter;
+import com.example.zer.weiyingdemo.model.bean.DiscoverBean;
+import com.example.zer.weiyingdemo.presenter.DiscoverPresenter;
+import com.example.zer.weiyingdemo.view.interfaces.IDiscoverView;
+import java.util.List;
+import java.util.Random;
 
-import java.util.ArrayList;
-
-public class threeFragment extends Fragment {
+public class threeFragment extends BaseFragment<DiscoverPresenter> implements IDiscoverView {
     private RecyclerView mActivity_review;
     private UniversalAdapter mAdatper;
-    private ArrayList<SwipeCardBean> mList;
-    private View view;
+    private TextView discover_huan;
+    private DiscoverPresenter discoverPresenter;
+    private List<DiscoverBean.RetBean.ListBean> list;
+    int page=0;
+    private TextView discover_noitem;
 
-    @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.threefragment, null);
-
-        initView();
-        initData();
-        setData();
-
-        return view;
+    protected int getChildFragment() {
+        return R.layout.threefragment;
     }
 
-    private void initView() {
-        mList = new ArrayList<>();
+    @Override
+    protected void initView(View view) {
+        /*discoverPresenter = new DiscoverPresenter();*/
+        discoverPresenter=getPresenter();
+        discoverPresenter.attachView(this);
+        discoverPresenter.getPDiscover("402834815584e463015584e539330016",page+"");
+
         mActivity_review = view.findViewById(R.id.activity_review);
+        discover_noitem = view.findViewById(R.id.discover_noitem);
+        discover_huan = view.findViewById(R.id.discover_huan);
+        discover_huan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(list.size()>0){
+                    //page++;
+                    int min=1;
+                    int max=9;
+                    Random random = new Random();
+                    int num = random.nextInt(max)%(max-min+1) + min;
+                    discoverPresenter.getPDiscover("402834815584e463015584e539330016",num+"");
+                    mAdatper.notifyDataSetChanged();
+                    CardConfig.initConfig(getActivity());
+                    ItemTouchHelper.Callback callback=new SwipeCardCallBack(list,mAdatper,mActivity_review);
+                    ItemTouchHelper helper=new ItemTouchHelper(callback);
+                    helper.attachToRecyclerView(mActivity_review);
+                }else
+                {
+                    mActivity_review.setVisibility(View.GONE);
+                    discover_noitem.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+    }
+
+    protected void initData() {
 
     }
 
-    private void initData() {
-        /**这里的图片就上网百度了8张。本人比较懒就用本地图片代替。
-         当然你要有现成的接口也可以网络加载解析。*/
-        int[] intimage = {R.drawable.c, R.drawable.d, R.drawable.e,      R.drawable.f,
-                R.drawable.g, R.drawable.a, R.drawable.b};
-        for (int i = 0; i < 7; i++) {
-            SwipeCardBean swpe = new SwipeCardBean();
-            swpe.resoutimage = intimage[i];
-            swpe.title = "美丽" + i;
-            mList.add(swpe);
-        }
+    @Override
+    protected DiscoverPresenter getPresenter() {
+        return new DiscoverPresenter();
     }
-    private void setData() {
+
+    @Override
+    public void onSuccess(DiscoverBean discoverBean) {
+        list = discoverBean.getRet().getList();
         SwipeCardLayoutManager swmanamger = new SwipeCardLayoutManager(getActivity());
         mActivity_review.setLayoutManager(swmanamger);
-        mAdatper = new UniversalAdapter(mList, getActivity());
+        mAdatper = new UniversalAdapter(list, getActivity());
         mActivity_review.setAdapter(mAdatper);
         CardConfig.initConfig(getActivity());
-        ItemTouchHelper.Callback callback=new SwipeCardCallBack(mList,mAdatper,mActivity_review);
+        ItemTouchHelper.Callback callback=new SwipeCardCallBack(list,mAdatper,mActivity_review);
         ItemTouchHelper helper=new ItemTouchHelper(callback);
         helper.attachToRecyclerView(mActivity_review);
+    }
+
+    @Override
+    public void onError(String s) {
+        Log.e("tftf",s);
     }
 }

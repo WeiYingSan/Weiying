@@ -23,20 +23,20 @@
             android:id="@+id/disadapter_name"
             />
         <ImageView
-            android:id="@+id/recy_item_im"
+            android:id="@+id/disadapter_img"
             android:layout_width="@dimen/dp_160"
             android:layout_height="@dimen/dp_180"
             android:layout_gravity="center"
             />
         <TextView
             android:textColor="#BABABA"
-            android:id="@+id/recy_item_tv"
             android:text="哈哈"
             android:textSize="18sp"
             android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dp_10"
+            android:id="@+id/disadapter_text"
             />
     </LinearLayout>
 

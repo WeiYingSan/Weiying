@@ -1,22 +1,29 @@
 package com.example.zer.weiyingdemo;
 
 import android.content.Context;
+import android.content.Intent;
+import android.support.v4.app.FragmentActivity;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+import com.example.zer.weiyingdemo.model.bean.DiscoverBean;
+import com.example.zer.weiyingdemo.view.activity.DiscoverXq;
+
 import java.util.ArrayList;
+import java.util.List;
 
 public class UniversalAdapter extends RecyclerView.Adapter<UniversalAdapter.UniversalViewHolder> {
-    public ArrayList<SwipeCardBean> mData;
-    public Context context;
-
-    public UniversalAdapter(ArrayList<SwipeCardBean> mData, Context context) {
-        this.mData = mData;
-        this.context = context;
+    List<DiscoverBean.RetBean.ListBean> list;
+    Context context;
+    public UniversalAdapter(List<DiscoverBean.RetBean.ListBean> list, Context context) {
+        this.list=list;
+        this.context=context;
     }
 
     @Override
@@ -29,23 +36,39 @@ public class UniversalAdapter extends RecyclerView.Adapter<UniversalAdapter.Univ
     @Override
     public void onBindViewHolder(UniversalViewHolder holder, int position) {
         UniversalViewHolder holder1=holder;
-        holder1.recy_item_im.setBackgroundResource(mData.get(position).resoutimage);
-        holder1.recy_item_tv.setText(mData.get(position).title);
+        holder1.disadapter_name.setText(""+list.get(position).getTitle());
+        Glide.with(context).load(list.get(position).getPic()).into(holder1.disadapter_img);
+        holder1.disadapter_text.setText(list.get(position).getDescription());
+
+        //适配器中的条目点击监听
+        holder1.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, DiscoverXq.class);
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override
     public int getItemCount() {
-        return mData == null ? 0 : mData.size();
+        /*return mData == null ? 0 : mData.size();*/
+        if(list!=null){
+            return list.size();
+        }
+        return 0;
     }
 
     public class UniversalViewHolder extends RecyclerView.ViewHolder {
-        public TextView recy_item_tv;
-        public ImageView recy_item_im;
+        private final TextView disadapter_name;
+        public TextView disadapter_text;
+        public ImageView disadapter_img;
 
         public UniversalViewHolder(View itemView) {
             super(itemView);
-            recy_item_im=itemView.findViewById(R.id.recy_item_im);
-            recy_item_tv=itemView.findViewById(R.id.recy_item_tv);
+            disadapter_name = itemView.findViewById(R.id.disadapter_name);
+            disadapter_img=itemView.findViewById(R.id.disadapter_img);
+            disadapter_text=itemView.findViewById(R.id.disadapter_text);
         }
     }
 }

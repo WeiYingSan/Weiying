@@ -14,22 +14,36 @@
         android:gravity="center"
         />
 
-    <android.support.v7.widget.RecyclerView
-        android:layout_marginTop="@dimen/dp_30"
-        android:id="@+id/activity_review"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="7"
-        >
-    </android.support.v7.widget.RecyclerView>
-    <TextView
-        android:layout_width="@dimen/dp_70"
-        android:layout_height="@dimen/dp_25"
-        android:text="换一批"
-        android:layout_gravity="center"
-        android:layout_marginBottom="@dimen/dp_30"
-        android:gravity="center"
-        android:background="#66CD00"
-        android:id="@+id/discover_huan"
-        />
+        android:layout_height="match_parent">
+        <android.support.v7.widget.RecyclerView
+            android:layout_marginTop="@dimen/dp_30"
+            android:id="@+id/activity_review"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+        </android.support.v7.widget.RecyclerView>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="没有了，点击换下一批"
+            android:visibility="gone"
+            android:gravity="center"
+            android:textColor="#fff"
+            android:id="@+id/discover_noitem"
+            />
+        <TextView
+            android:layout_width="@dimen/dp_70"
+            android:layout_height="@dimen/dp_25"
+            android:text="换一批"
+            android:layout_marginBottom="@dimen/dp_30"
+            android:gravity="center"
+            android:background="#66CD00"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/discover_huan"
+            />
+    </RelativeLayout>
+
 </LinearLayout>
