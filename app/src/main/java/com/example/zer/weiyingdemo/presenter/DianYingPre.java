@@ -32,6 +32,7 @@ public class DianYingPre extends BasePresenter<IDianyingView>{
 
                     @Override
                     public void onNext(PinDaoBean value) {
+                        Log.e("dypdyp",value.getMsg());
                       getView().onSuccess(value);
                     }
 

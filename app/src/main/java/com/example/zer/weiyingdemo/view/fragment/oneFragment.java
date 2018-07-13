@@ -21,6 +21,7 @@ import com.bumptech.glide.Glide;
 import com.example.zer.weiyingdemo.R;
 import com.example.zer.weiyingdemo.model.bean.ShouYeBean;
 import com.example.zer.weiyingdemo.presenter.SelecTionPresenter;
+import com.example.zer.weiyingdemo.utils.GradationScrollView;
 import com.example.zer.weiyingdemo.view.adapter.JingCaiAdapter;
 import com.example.zer.weiyingdemo.view.interfaces.SelecTionInterV;
 import com.youth.banner.Banner;
