@@ -1,19 +1,17 @@
 package com.example.zer.weiyingdemo.view.fragment;
 
-import android.annotation.TargetApi;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
-import android.os.Build;
-import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
+
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.LayoutInflater;
+
 import android.view.View;
-import android.view.ViewGroup;
+
 import android.widget.ImageView;
-import android.widget.ScrollView;
+
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,6 +19,8 @@ import com.bumptech.glide.Glide;
 import com.example.zer.weiyingdemo.R;
 import com.example.zer.weiyingdemo.model.bean.ShouYeBean;
 import com.example.zer.weiyingdemo.presenter.SelecTionPresenter;
+import com.example.zer.weiyingdemo.utils.GradationScrollView;
+import com.example.zer.weiyingdemo.view.activity.SousuoActivity;
 import com.example.zer.weiyingdemo.view.adapter.JingCaiAdapter;
 import com.example.zer.weiyingdemo.view.interfaces.SelecTionInterV;
 import com.youth.banner.Banner;
@@ -42,6 +42,7 @@ public class oneFragment extends BaseFragment<SelecTionPresenter> implements Sel
     private JingCaiAdapter jingCaiAdapter;
     private GradationScrollView shou_scroll;
     private TextView title;
+    private RelativeLayout onefragment_sousuo;
 
     @Override
     public void onResume() {
@@ -65,6 +66,18 @@ public class oneFragment extends BaseFragment<SelecTionPresenter> implements Sel
         presenter.toM();
         //scroll滑动监听
         scrollListenner();
+        //搜索监听
+        sousuolistener();
+    }
+
+    private void sousuolistener() {
+        onefragment_sousuo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(),SousuoActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void scrollListenner() {
@@ -101,6 +114,7 @@ public class oneFragment extends BaseFragment<SelecTionPresenter> implements Sel
         jingcairecy = view.findViewById(R.id.jingcairecy);
         shou_scroll = view.findViewById(R.id.shou_scroll);
         title = view.findViewById(R.id.title);
+        onefragment_sousuo = view.findViewById(R.id.onefragment_sousuo);
     }
 
     @Override
