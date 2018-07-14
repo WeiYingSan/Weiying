@@ -10,13 +10,14 @@ import android.widget.TextView;
 import com.example.zer.weiyingdemo.R;
 import com.example.zer.weiyingdemo.model.bean.LishiBean;
 import com.example.zer.weiyingdemo.view.activity.SousuoActivity;
+import com.example.zer.weiyingdemo.view.interfaces.SetEditInterfaceV;
 
 import java.util.List;
 
 public class SouSuoLiShiAdapter extends RecyclerView.Adapter{
    private Context context;
    private List<LishiBean> list;
-
+   private SetEditInterfaceV setEditInterfaceV;
     public SouSuoLiShiAdapter(Context context) {
         this.context = context;
     }
@@ -26,7 +27,9 @@ public class SouSuoLiShiAdapter extends RecyclerView.Adapter{
         }
         this.list=list;
     }
-
+    public void setInterface(SetEditInterfaceV setEditInterfaceV){
+        this.setEditInterfaceV=setEditInterfaceV;
+    }
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -36,9 +39,15 @@ public class SouSuoLiShiAdapter extends RecyclerView.Adapter{
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, final int position) {
         SousuoLiShiViewHolder sousuoLiShiViewHolder = (SousuoLiShiViewHolder) holder;
         sousuoLiShiViewHolder.textView.setText(list.get(position).getName());
+        sousuoLiShiViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setEditInterfaceV.setEdit(list.get(position).getName());
+            }
+        });
     }
 
     @Override

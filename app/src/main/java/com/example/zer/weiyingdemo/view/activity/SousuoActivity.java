@@ -21,10 +21,11 @@ import com.example.zer.weiyingdemo.R;
 import com.example.zer.weiyingdemo.db.LishiBeanDao;
 import com.example.zer.weiyingdemo.model.bean.LishiBean;
 import com.example.zer.weiyingdemo.view.adapter.SouSuoLiShiAdapter;
+import com.example.zer.weiyingdemo.view.interfaces.SetEditInterfaceV;
 
 import java.util.List;
 
-public class SousuoActivity extends AppCompatActivity {
+public class SousuoActivity extends AppCompatActivity implements SetEditInterfaceV{
 
     private EditText sousuo_edit;
     private RecyclerView sousuo_lishi_recy;
@@ -124,6 +125,7 @@ public class SousuoActivity extends AppCompatActivity {
         lishiBeans = lishiBeanDao.loadAll();
         if(souSuoLiShiAdapter==null){
             souSuoLiShiAdapter = new SouSuoLiShiAdapter(this);
+            souSuoLiShiAdapter.setInterface(SousuoActivity.this);
             souSuoLiShiAdapter.setList(lishiBeans);
             sousuo_lishi_recy.setLayoutManager(new LinearLayoutManager(this));
             sousuo_lishi_recy.setAdapter(souSuoLiShiAdapter);
@@ -144,5 +146,10 @@ public class SousuoActivity extends AppCompatActivity {
         sousuo_edit = findViewById(R.id.sousuo_edit);
         sousuo_lishi_recy = findViewById(R.id.sousuo_lishi_recy);
         sousuo_text = findViewById(R.id.sousuo_text);
+    }
+
+    @Override
+    public void setEdit(String name) {
+        sousuo_edit.setText(name+"");
     }
 }
