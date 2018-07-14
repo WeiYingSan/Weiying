@@ -4,6 +4,7 @@ package com.example.zer.weiyingdemo.model.http;
 import com.example.zer.weiyingdemo.model.bean.CommentBean;
 import com.example.zer.weiyingdemo.model.bean.DetailsBean;
 import com.example.zer.weiyingdemo.model.bean.DiscoverBean;
+import com.example.zer.weiyingdemo.model.bean.FuzzyQueryBean;
 import com.example.zer.weiyingdemo.model.bean.PinDaoBean;
 import com.example.zer.weiyingdemo.model.bean.ShouYeBean;
 import io.reactivex.Observable;
@@ -41,5 +42,10 @@ public interface BaseAPI {
      Observable<CommentBean> comment(
              @Field("mediaId")String mediaid
      );
-
+     @POST("front/searchKeyWordApi/getVideoListByKeyWord.do")
+     @FormUrlEncoded
+     Observable<FuzzyQueryBean>
+     getVideoByKeyWord(
+             @Field("keyword") String keyword
+     );
 }
