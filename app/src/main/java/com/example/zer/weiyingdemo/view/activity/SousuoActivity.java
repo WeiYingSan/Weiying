@@ -140,6 +140,9 @@ public class SousuoActivity extends AppCompatActivity implements SetEditInterfac
         if(lishiBeanDao==null){
             lishiBeanDao = MyApp.getInstances().getDaoSession().getLishiBeanDao();
         }
+        if(lishiBeanDao!=null){
+
+        }
     }
 
     private void findId() {
