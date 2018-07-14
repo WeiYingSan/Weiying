@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_60"
         android:orientation="horizontal"
-        android:background="#BBBBBB"
+        android:background="#4F4F4F"
 
         >
         <LinearLayout
@@ -68,7 +68,7 @@
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dp_160"
+        android:layout_height="@dimen/dp_180"
         android:orientation="vertical"
         >
         <fm.jiecao.jcvideoplayer_lib.JCVideoPlayer
@@ -79,7 +79,7 @@
     <android.support.design.widget.TabLayout
         app:tabIndicatorHeight="4dp"
         app:tabTextAppearance="@android:style/TextAppearance.Holo.Inverse"
-        android:background="#3E3E3E"
+        android:background="#001831"
         app:tabIndicatorColor="#06E34F"
         app:tabTextColor="#fff"
         app:tabSelectedTextColor="#06E34F"

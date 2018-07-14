@@ -51,8 +51,8 @@ public class ShouCangAdapter extends RecyclerView.Adapter{
 
         public ViewHolder(View itemView) {
             super(itemView);
-            shoucang_item_img = itemView.findViewById(R.id.shoucang_item_img);
-            shoucang_item_text = itemView.findViewById(R.id.shoucang_item_text);
+            shoucang_item_img = itemView.findViewById(R.id.shoucang_recy_img);
+            shoucang_item_text = itemView.findViewById(R.id.shoucang_recy_title);
         }
     }
 }

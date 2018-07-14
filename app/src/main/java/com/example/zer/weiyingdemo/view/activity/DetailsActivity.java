@@ -12,6 +12,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.bumptech.glide.Glide;
 import com.example.zer.weiyingdemo.MyApp;
 import com.example.zer.weiyingdemo.R;
 import com.example.zer.weiyingdemo.db.ShouCangBeanDao;
@@ -21,7 +23,6 @@ import com.example.zer.weiyingdemo.presenter.DetailsPresenter;
 import com.example.zer.weiyingdemo.view.fragment.BriefingSesstionFragment;
 import com.example.zer.weiyingdemo.view.fragment.CommentFragment;
 import com.example.zer.weiyingdemo.view.interfaces.DetailsInterV;
-import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -114,9 +115,9 @@ public class DetailsActivity extends BaseActivity<DetailsPresenter> implements D
     //关联Tablayout
     private void tablayoutdata(DetailsBean.RetBean v) {
         videocontroller1.setUp(v.getHDURL(),v.getTitle());
-        Log.d("TAG", "tablayoutdata: 封面"+Uri.parse(v.getPic()));
         //jiecao/jiaozi设置封面
-        Picasso.with(this).load(v.getPic()).into(videocontroller1.ivThumb);
+        Glide.with(DetailsActivity.this).load(v.getPic()).into(videocontroller1.ivThumb);
+        videocontroller1.ivThumb.setScaleType(ImageView.ScaleType.FIT_XY);
         details_title.setText(v.getTitle()+"");
         titleList.add("简介");
         titleList.add("评论");

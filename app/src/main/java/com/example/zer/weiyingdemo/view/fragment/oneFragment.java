@@ -4,9 +4,12 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 
+import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
+import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 
 import android.widget.ImageView;
@@ -21,10 +24,12 @@ import com.example.zer.weiyingdemo.model.bean.ShouYeBean;
 import com.example.zer.weiyingdemo.presenter.SelecTionPresenter;
 import com.example.zer.weiyingdemo.utils.GradationScrollView;
 import com.example.zer.weiyingdemo.utils.GradationScrollView;
+import com.example.zer.weiyingdemo.view.activity.DetailsActivity;
 import com.example.zer.weiyingdemo.view.activity.SousuoActivity;
 import com.example.zer.weiyingdemo.view.adapter.JingCaiAdapter;
 import com.example.zer.weiyingdemo.view.interfaces.SelecTionInterV;
 import com.youth.banner.Banner;
+import com.youth.banner.listener.OnBannerListener;
 import com.youth.banner.loader.ImageLoader;
 
 import java.util.ArrayList;
@@ -144,6 +149,20 @@ public class oneFragment extends BaseFragment<SelecTionPresenter> implements Sel
              banner.setImages(bannerlist);
              banner.setDelayTime(2000);
              banner.start();
+
+             banner.setOnBannerListener(new OnBannerListener() {
+                 @Override
+                 public void OnBannerClick(int position) {
+                     Intent intent = new Intent(getActivity(),DetailsActivity.class);
+                     Bundle bundle = new Bundle();
+                     String dataId = childList.get(position).getDataId();
+                     Log.d("aaaa", "onClick: %%%%"+dataId);
+                     bundle.putString("mediaId",dataId);
+                     intent.putExtra("bundle",bundle);
+                     startActivity(intent);
+                 }
+             });
+
              //banner
              //精彩推荐
              if(jingCaiAdapter==null){
